@@ -9,7 +9,7 @@ Just don't copy paste
     git clone https://github.com/shrut1-roy/Hacktoberfest2022.git
     (this is the link which you copied)
 - Open directory using 
-      cd repo-name (repo name is awesome-hactoberfest-2022)
+      cd repo-name (repo name is Hacktoberfest2022)
 - Create a branch using :
     git checkout -b branch-name
 - Make changes in the local environment
