@@ -2,7 +2,7 @@
 Just don't copy paste
 
 
-## Contribution Guide for HactoberFest
+## Contribution Guide for HacktoberFest
 - Fork this repository by clicking on the top right fork button in this page
 - Click on code and copy the repo https link
 - Clone this fork using :
