@@ -1,0 +1,70 @@
+struct Node
+{
+    int data;
+    struct Node *left, *right;
+};
+*/
+
+class Solution
+{
+private:
+
+public:
+    void fun2(Node* root,int k,vector<int>&v)
+    {
+        if(root == NULL || k<0)
+        return;
+        
+        if(k == 0)
+        {
+            v.push_back(root->data);
+            return;
+        }
+        
+        fun2(root->left,k-1,v);
+        fun2(root->right,k-1,v);
+    }
+    
+    int fun1(Node* root,int t,int k,vector<int>&v)
+    {
+        if(root == NULL)
+        return -1;
+        
+        if(root->data == t)
+        {
+            fun2(root,k,v);
+            return k-1;
+        }
+        
+        int i = fun1(root->left,t,k,v);
+        {
+            if(i == 0)
+                fun2(root,i,v);
+            else if(i>0)
+            {
+                fun2(root->right,i-1,v);
+                return i-1;
+            }
+            
+        }
+        
+        int j = fun1(root->right,t,k,v);
+        {
+            if(j == 0)
+               fun2(root,j,v);
+            else if(j>0)
+            {
+                fun2(root->left,j-1,v);
+                return j-1;
+            }
+        }
+    }
+    
+   vector<int>  KDistanceNodes(Node* root,int t,int k)
+   {
+       vector<int>v;
+       fun1(root,t,k,v);
+       sort(v.begin(),v.end());
+       return v;
+   }
+};
